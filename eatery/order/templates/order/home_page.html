@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+	<h1>Prince Benson Fusion Restaurant</h1>
+	<p>Tasty Treats To Your Door</p>
+
+	<h2>Here are all our foods!</h2>
+
+	<!-- Item 1 -->
+	<p>Sashimi: 12RMB</p>
+	<img src="https://tse2.mm.bing.net/th?id=OIP.3NoXrksCFDRclPWp0gpcWAHaFi&pid=Api">
+	<br>
+
+	<!-- Item 2 -->
+	<p>Steak: 70RMB</p>
+	<img src="http://tse1.mm.bing.net/th?id=OIP.u6ab4qGA_yuMgw0BduNEJgHaEn&pid=Api">
+
+	<!-- Item 3 -->
+	<p>Tom Yum Soup: 10RMB</p>
+	<img src="https://tse3.mm.bing.net/th?id=OIP.SCSH07l1vBvFjZ0VcQNZmQHaFT&pid=Api">
+
+	<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'order:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="item" placeholder="Please Type Which Item You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Item Ordered: {{item}}</p>
+	<p>Delivery Address: {{address}}</p>
+
+</body>
+</html>
